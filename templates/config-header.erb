@@ -1,0 +1,15 @@
+# /etc/koji-helpers/config
+#
+# vim: filetype=configparser
+#
+# WARNING:
+#   - This file is managed by Puppet via the "<%= @module_name %>" module.
+#
+#   - This file must remain readable only by the `repomgr` user so as to not
+#   compromise the security of the Sigul key passphrases given here.
+
+[smashd]
+repo_dir = <%= @repo_dir %>
+check_interval = <%= @check_interval %>
+quiescent_period = <%= @quiescent_period %>
+exclude_tags = <%= @exclude_tags.join(' ') %>
