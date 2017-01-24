@@ -8,8 +8,14 @@
 #   - This file must remain readable only by the `repomgr` user so as to not
 #   compromise the security of the Sigul key passphrases given here.
 
+[gojira]
+check_interval = <%= @gojira_check_interval %>
+quiescent_period = <%= @gojira_quiescent_period %>
+
 [smashd]
 repo_dir = <%= @repo_dir %>
-check_interval = <%= @check_interval %>
-quiescent_period = <%= @quiescent_period %>
+check_interval = <%= @smashd_check_interval %>
+quiescent_period = <%= @smashd_quiescent_period %>
 exclude_tags = <%= @exclude_tags.join(' ') %>
+notifications_from = <%= @notifications_from %>
+notifications_to = <%= @notifications_to.join(' ') %>

@@ -22,9 +22,7 @@ class koji_helpers::params {
             $config = '/etc/koji-helpers/config'
             $mash_conf_dir = '/etc/mash'
             $mash_work_dir = '/var/cache/mash'
-            $services = 'smashd'
-            $regen_repos_conf = '/etc/koji-helpers/repos.conf'
-            $regen_repos_service = 'regen-repos'
+            $services = ['gojira', 'smashd']
 
         }
 
