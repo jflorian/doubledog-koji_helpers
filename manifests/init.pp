@@ -31,27 +31,9 @@
 # [*ensure*]
 #   Services are to be 'running' (default) or 'stopped'.
 #
-# [*gojira_check_interval*]
-#   The (minimum) number of seconds that gojira is to wait between checks for
-#   changes in the external package repositories.  The default is 60 seconds.
-#
-# [*gojira_quiescent_period*]
-#   The number of seconds that must pass without any more changes before
-#   gojira will initiate the signing/mashing process.  The default is 600
-#   seconds.
-#
 # [*notifications_from*]
 #   The email address to be used as the sender when smashd sends
 #   notifications.  Defaults to "repo_owner" @ the (facter) $domain.
-#
-# [*smashd_check_interval*]
-#   The (minimum) number of seconds that smashd is to wait between checks for
-#   new tag events.  The default is 10 seconds.
-#
-# [*smashd_quiescent_period*]
-#   The number of seconds that must pass without any more new tag events
-#   before smashd will initiate the signing/mashing process.  The default is
-#   30 seconds.
 #
 # === Authors
 #
@@ -69,11 +51,7 @@ class koji_helpers (
         Boolean $enable=true,
         Variant[Boolean, Enum['running', 'stopped']] $ensure='running',
         Array[String[1]] $exclude_tags=['trashcan'],
-        Numeric $gojira_check_interval=60,
-        Numeric $gojira_quiescent_period=600,
         String[1] $notifications_from="${repo_owner}@${::domain}",
-        Numeric $smashd_check_interval=10,
-        Numeric $smashd_quiescent_period=30,
     ) inherits ::koji_helpers::params {
 
     validate_absolute_path($repo_dir)
