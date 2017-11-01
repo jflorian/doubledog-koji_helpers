@@ -59,6 +59,15 @@
 # [*inherit*]
 #   Undocumented.  Defaults to false.
 #
+# [*latest*]
+#   If true, only include the latest version of each package in the tag.  If
+#   false, include all versions in the tag.  This may also be set to an
+#   integer for a middle ground of this many, at most, of the latest versions.
+#   Thus, values of true and 1 are equivalent as are false and infinity (if
+#   Puppet were to have such a value).  The specific meaning of latest version
+#   here matches normal rpm behavior, i.e., epoch > version > release.
+#   Defaults to true.
+#
 # [*mash_path*]
 #   Name of the directory into which this repository is to be mashed by
 #   smashd.  Defaults to the value set by "repo_name".
@@ -116,7 +125,7 @@
 #
 # === Copyright
 #
-# Copyright 2016 John Florian
+# Copyright 2016-2017 John Florian
 
 
 define koji_helpers::repo (
@@ -132,6 +141,7 @@ define koji_helpers::repo (
         Variant[Undef, String[1]] $distro_tags=undef,
         Boolean $hash_packages=true,
         Boolean $inherit=false,
+        Variant[Boolean, Integer[1]] $latest=true,
         Variant[Undef, String[1]] $mash_path=undef,
         Integer $max_delta_rpm_age=604800,
         Integer $max_delta_rpm_size=800000000,
