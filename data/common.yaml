@@ -4,3 +4,6 @@ koji_helpers::mash_conf_dir:    /etc/mash
 koji_helpers::mash_work_dir:    /var/cache/mash
 koji_helpers::packages:
     - koji-helpers
+koji_helpers::services:
+    - gojira
+    - smashd

@@ -17,6 +17,7 @@ class koji_helpers (
         String[1]               $mash_conf_dir,
         String[1]               $mash_work_dir,
         Array[String[1], 1]     $packages,
+        Array[String[1], 1]     $services,
         String[1] $repo_dir,
         String[1] $repo_owner,
         Array[String[1]] $notifications_to,
@@ -24,13 +25,13 @@ class koji_helpers (
         Variant[Boolean, Enum['running', 'stopped']] $ensure='running',
         Array[String[1]] $exclude_tags=['trashcan'],
         String[1] $notifications_from="${repo_owner}@${::domain}",
-    ) inherits ::koji_helpers::params {
+    ) {
 
     validate_absolute_path($repo_dir)
 
     package { $packages:
         ensure => installed,
-        notify => Service[$::koji_helpers::params::services],
+        notify => Service[$services],
     } ->
 
     file { $::koji_helpers::mash_work_dir:
@@ -50,7 +51,7 @@ class koji_helpers (
         seluser   => 'system_u',
         selrole   => 'object_r',
         seltype   => 'etc_t',
-        notify    => Service[$::koji_helpers::params::services],
+        notify    => Service[$services],
         show_diff => false,
     }
 
@@ -60,7 +61,7 @@ class koji_helpers (
         order   => '01',
     }
 
-    service { $::koji_helpers::params::services:
+    service { $services:
         ensure     => $ensure,
         enable     => $enable,
         hasrestart => true,

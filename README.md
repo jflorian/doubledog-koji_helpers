@@ -79,6 +79,9 @@ The email address to be used as the sender when smashd sends notifications.  Def
 ##### `packages`
 An array of package names needed for the koji-helpers installation.  The default should be correct for supported platforms.
 
+##### `services`
+An array of services names needed for the operation of koji-helpers.  The default should be correct for supported platforms.
+
 
 ### Defined types
 
