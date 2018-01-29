@@ -18,7 +18,6 @@ class koji_helpers::params {
     case $::operatingsystem {
         'CentOS': {
 
-            $config = '/etc/koji-helpers/config'
             $mash_conf_dir = '/etc/mash'
             $mash_work_dir = '/var/cache/mash'
             $services = ['gojira', 'smashd']

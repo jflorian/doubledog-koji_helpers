@@ -68,7 +68,7 @@ define koji_helpers::repo (
 
     if $ensure == 'present' {
         concat::fragment { "koji-helper repository ${repo_name}":
-            target  => $::koji_helpers::params::config,
+            target  => $::koji_helpers::config,
             content => template('koji_helpers/config-repo.erb'),
             order   => '02',
         }

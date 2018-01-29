@@ -25,11 +25,9 @@ define koji_helpers::buildroot_dependency (
         String[1] $buildroot_name=$title,
     ) {
 
-    include '::koji_helpers::params'
-
     if $ensure == 'present' {
         concat::fragment { "koji-helper buildroot_dependency ${buildroot_name}":
-            target  => $::koji_helpers::params::config,
+            target  => $::koji_helpers::config,
             content => template('koji_helpers/config-buildroot-dep.erb'),
             order   => '03',
         }

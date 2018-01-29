@@ -13,6 +13,7 @@
 
 
 class koji_helpers (
+        String[1]               $config,
         Array[String[1], 1]     $packages,
         String[1] $repo_dir,
         String[1] $repo_owner,
@@ -40,7 +41,7 @@ class koji_helpers (
         seltype => 'var_t',
     } ->
 
-    concat { $::koji_helpers::params::config:
+    concat { $config:
         owner     => $repo_owner,
         group     => $repo_owner,
         mode      => '0600',
@@ -52,7 +53,7 @@ class koji_helpers (
     }
 
     concat::fragment { 'config-header':
-        target  => $::koji_helpers::params::config,
+        target  => $config,
         content => template('koji_helpers/config-header.erb'),
         order   => '01',
     }

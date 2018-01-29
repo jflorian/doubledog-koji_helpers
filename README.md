@@ -55,6 +55,9 @@ Name of the directory that is to be synchronized with the repository tree compos
 ##### `repo_owner` (required)
 User that is to own the `repo_dir` and the content therein.
 
+##### `config`
+The filename of the main koji-helpers configuration file.  The default should be correct for supported platforms.
+
 ##### `exclude_tags`
 An array of tags which smashd should ignore.  The default is `['trashcan']`.
 

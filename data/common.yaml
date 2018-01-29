@@ -1,3 +1,4 @@
 ---
+koji_helpers::config:           /etc/koji-helpers/config
 koji_helpers::packages:
     - koji-helpers
