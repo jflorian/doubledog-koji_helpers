@@ -67,6 +67,9 @@ Services are to be started at boot.  Either `true` (default) or `false`.
 ##### `ensure`
 Services are to be `running` (default) or `stopped`.  Alternatively, a Boolean value may also be used with `true` equivalent to `running` and `false` equivalent to `stopped`.
 
+##### `mash_conf_dir`
+The name of the directory where the mash configurations are kept.  The default should be correct for supported platforms.
+
 ##### `notifications_from`
 The email address to be used as the sender when smashd sends notifications.  Defaults to `repo_owner` @ the (facter) `$domain`.
 

@@ -1,4 +1,5 @@
 ---
 koji_helpers::config:           /etc/koji-helpers/config
+koji_helpers::mash_conf_dir:    /etc/mash
 koji_helpers::packages:
     - koji-helpers
