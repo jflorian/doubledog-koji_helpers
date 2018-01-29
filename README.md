@@ -36,6 +36,8 @@ This module lets you manage the koji-helpers package and its configuration.  Tha
 
 **Defined types:**
 
+* [koji\_helpers::buildroot\_dependency](#kojihelpersbuildrootdependency-defined-type)
+
 
 ### Classes
 
@@ -66,6 +68,26 @@ The email address to be used as the sender when smashd sends notifications.  Def
 
 
 ### Defined types
+
+#### koji\_helpers::buildroot\_dependency defined type
+
+This defined type manages Gojira's configuration for a buildroot's dependencies on external package repositories.
+
+If a Koji buildroot has dependencies on external package repositories, builds within that buildroot will fail if those external package repositories mutate unless Koji's internal repository meta-data is regenerated.  This definition allows you to declare such dependencies so that such regeneration will be triggered by Gojira automatically, as needed.
+
+##### `namevar` (required)
+An arbitrary identifier for the buildroot dependency instance unless the `buildroot_name` parameter is not set in which case this must provide the value normally set with the `buildroot_name` parameter.
+
+##### `ext_repo_urls` (required)
+An array of URLs referencing external package repositories upon which this buildroot is dependent.  These entries need not match your package manager's configuration for repositories on a one-to-one basis.  If anything changes in one of these package repositories, the regeneration will be triggered.
+
+For a hint of what belongs here, consult the output of: `koji list-external-repos`
+
+##### `ensure`
+Instance is to be `present` (default) or `absent`.
+
+##### `buildroot_name`
+This may be used in place of `namevar` if it's beneficial to give `namevar` an arbitrary value.  If set, this must provide the Koji tag representing the buildroot having external dependencies.
 
 
 ## Limitations
