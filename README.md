@@ -32,10 +32,37 @@ This module lets you manage the koji-helpers package and its configuration.  Tha
 
 **Classes:**
 
+* [koji\_helpers](#kojihelpers-class)
+
 **Defined types:**
 
 
 ### Classes
+
+#### koji\_helpers class
+
+This class manages the package installation, the work directory along with the gojira and smashd services.  It also anchors the various configuration fragments that govern those services.
+
+##### `notifications_to` (required)
+An array of email address that are to be notified when smashd affects package repositories.
+
+##### `repo_dir` (required)
+Name of the directory that is to be synchronized with the repository tree composited from each of the mashed repositories.  This typically would be the longest path that all package repositories have in common.
+
+##### `repo_owner` (required)
+User that is to own the `repo_dir` and the content therein.
+
+##### `exclude_tags`
+An array of tags which smashd should ignore.  The default is `['trashcan']`.
+
+##### `enable`
+Services are to be started at boot.  Either `true` (default) or `false`.
+
+##### `ensure`
+Services are to be `running` (default) or `stopped`.  Alternatively, a Boolean value may also be used with `true` equivalent to `running` and `false` equivalent to `stopped`.
+
+##### `notifications_from`
+The email address to be used as the sender when smashd sends notifications.  Defaults to `repo_owner` @ the (facter) `$domain`.
 
 
 ### Defined types

@@ -1,39 +1,7 @@
-# modules/koji_helpers/manifests/init.pp
 #
 # == Class: koji_helpers
 #
 # Manages koji-helpers on a host.
-#
-# === Parameters
-#
-# ==== Required
-#
-# [*notifications_to*]
-#   An array of email address that are to be notified when smashd affects
-#   package repositories.
-#
-# [*repo_dir*]
-#   Name of the directory that is to be synchronized with the repository tree
-#   composited from each of the mashed repositories.  This typically would be
-#   the longest path that all package repositories have in common.
-#
-# [*repo_owner*]
-#   User to own the "repo_dir" and the content therein.
-#
-# ==== Optional
-#
-# [*exclude_tags*]
-#   An array of tags which smashd should ignore.  The default is ['trashcan'].
-#
-# [*enable*]
-#   Services are to be started at boot.  Either true (default) or false.
-#
-# [*ensure*]
-#   Services are to be 'running' (default) or 'stopped'.
-#
-# [*notifications_from*]
-#   The email address to be used as the sender when smashd sends
-#   notifications.  Defaults to "repo_owner" @ the (facter) $domain.
 #
 # === Authors
 #
@@ -41,7 +9,7 @@
 #
 # === Copyright
 #
-# Copyright 2016 John Florian
+# Copyright 2016-2018 John Florian
 
 
 class koji_helpers (
