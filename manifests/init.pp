@@ -13,6 +13,7 @@
 
 
 class koji_helpers (
+        Array[String[1], 1]     $packages,
         String[1] $repo_dir,
         String[1] $repo_owner,
         Array[String[1]] $notifications_to,
@@ -24,7 +25,7 @@ class koji_helpers (
 
     validate_absolute_path($repo_dir)
 
-    package { $::koji_helpers::params::packages:
+    package { $packages:
         ensure => installed,
         notify => Service[$::koji_helpers::params::services],
     } ->

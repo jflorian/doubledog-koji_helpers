@@ -10,7 +10,7 @@
 #
 # === Copyright
 #
-# Copyright 2016 John Florian
+# Copyright 2016-2018 John Florian
 
 
 class koji_helpers::params {
@@ -18,7 +18,6 @@ class koji_helpers::params {
     case $::operatingsystem {
         'CentOS': {
 
-            $packages = 'koji-helpers'
             $config = '/etc/koji-helpers/config'
             $mash_conf_dir = '/etc/mash'
             $mash_work_dir = '/var/cache/mash'

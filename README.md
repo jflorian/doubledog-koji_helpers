@@ -67,6 +67,9 @@ Services are to be `running` (default) or `stopped`.  Alternatively, a Boolean v
 ##### `notifications_from`
 The email address to be used as the sender when smashd sends notifications.  Defaults to `repo_owner` @ the (facter) `$domain`.
 
+##### `packages`
+An array of package names needed for the koji-helpers installation.  The default should be correct for supported platforms.
+
 
 ### Defined types
 

@@ -1,0 +1,3 @@
+---
+koji_helpers::packages:
+    - koji-helpers
