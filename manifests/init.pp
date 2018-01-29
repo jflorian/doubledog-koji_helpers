@@ -15,6 +15,7 @@
 class koji_helpers (
         String[1]               $config,
         String[1]               $mash_conf_dir,
+        String[1]               $mash_work_dir,
         Array[String[1], 1]     $packages,
         String[1] $repo_dir,
         String[1] $repo_owner,
@@ -32,7 +33,7 @@ class koji_helpers (
         notify => Service[$::koji_helpers::params::services],
     } ->
 
-    file { $::koji_helpers::params::mash_work_dir:
+    file { $::koji_helpers::mash_work_dir:
         ensure  => directory,
         owner   => $repo_owner,
         group   => $repo_owner,

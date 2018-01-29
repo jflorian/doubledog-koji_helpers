@@ -70,6 +70,9 @@ Services are to be `running` (default) or `stopped`.  Alternatively, a Boolean v
 ##### `mash_conf_dir`
 The name of the directory where the mash configurations are kept.  The default should be correct for supported platforms.
 
+##### `mash_work_dir`
+The name of the directory where the mash is to perform its work.  The default should be correct for supported platforms.
+
 ##### `notifications_from`
 The email address to be used as the sender when smashd sends notifications.  Defaults to `repo_owner` @ the (facter) `$domain`.
 
