@@ -19,10 +19,10 @@
 
 
 define koji_helpers::buildroot_dependency (
-        Array[String[1]] $arches,
-        Array[String[1]] $ext_repo_urls,
+        Array[String[1]]        $arches,
+        Array[String[1]]        $ext_repo_urls,
         Variant[Boolean, Enum['present', 'absent']] $ensure='present',
-        String[1] $buildroot_name=$title,
+        String[1]               $buildroot_name=$title,
     ) {
 
     if $ensure == 'present' {

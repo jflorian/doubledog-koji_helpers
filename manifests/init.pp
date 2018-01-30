@@ -18,13 +18,13 @@ class koji_helpers (
         String[1]               $mash_work_dir,
         Array[String[1], 1]     $packages,
         Array[String[1], 1]     $services,
-        String[1] $repo_dir,
-        String[1] $repo_owner,
-        Array[String[1]] $notifications_to,
-        Boolean $enable=true,
-        Variant[Boolean, Enum['running', 'stopped']] $ensure='running',
-        Array[String[1]] $exclude_tags=['trashcan'],
-        String[1] $notifications_from="${repo_owner}@${::domain}",
+        String[1]               $repo_dir,
+        String[1]               $repo_owner,
+        Array[String[1]]        $notifications_to,
+        Boolean                 $enable=true,
+        Variant[Boolean, Enum['running', 'stopped']]    $ensure='running',
+        Array[String[1]]        $exclude_tags=['trashcan'],
+        String[1]               $notifications_from="${repo_owner}@${::domain}",
     ) {
 
     validate_absolute_path($repo_dir)
