@@ -64,7 +64,7 @@ define koji_helpers::repo (
         content => template('koji_helpers/mash.erb'),
     }
 
-    if $ensure == 'present' {
+    if $ensure == 'present' or $ensure == true {
         concat::fragment { "koji-helper repository ${repo_name}":
             target  => $::koji_helpers::config,
             content => template('koji_helpers/config-repo.erb'),
