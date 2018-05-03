@@ -1,3 +1,9 @@
+<!--
+# This file is part of the doubledog-koji_helpers Puppet module.
+# Copyright 2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # koji\_helpers
 
 #### Table of Contents
@@ -53,7 +59,7 @@ An array of email address that are to be notified when smashd affects package re
 Name of the directory that is to be synchronized with the repository tree composited from each of the mashed repositories.  This typically would be the longest path that all package repositories have in common.
 
 ##### `repo_owner` (required)
-User that is to own the `repo_dir` and the content therein.
+User that is to own the *repo_dir* and the content therein.
 
 ##### `config`
 The filename of the main koji-helpers configuration file.  The default should be correct for supported platforms.
@@ -74,7 +80,7 @@ The name of the directory where the mash configurations are kept.  The default s
 The name of the directory where the mash is to perform its work.  The default should be correct for supported platforms.
 
 ##### `notifications_from`
-The email address to be used as the sender when smashd sends notifications.  Defaults to `repo_owner` @ the (facter) `$domain`.
+The email address to be used as the sender when smashd sends notifications.  Defaults to *repo_owner* @ the (facter) `$domain`.
 
 ##### `packages`
 An array of package names needed for the koji-helpers installation.  The default should be correct for supported platforms.
@@ -92,7 +98,7 @@ This defined type manages Gojira's configuration for a buildroot's dependencies 
 If a Koji buildroot has dependencies on external package repositories, builds within that buildroot will fail if those external package repositories mutate unless Koji's internal repository meta-data is regenerated.  This definition allows you to declare such dependencies so that such regeneration will be triggered by Gojira automatically, as needed.
 
 ##### `namevar` (required)
-An arbitrary identifier for the buildroot dependency instance unless the `buildroot_name` parameter is not set in which case this must provide the value normally set with the `buildroot_name` parameter.
+An arbitrary identifier for the buildroot dependency instance unless the *buildroot_name* parameter is not set in which case this must provide the value normally set with the *buildroot_name* parameter.
 
 ##### `ext_repo_urls` (required)
 An array of URLs referencing external package repositories upon which this buildroot is dependent.  These entries need not match your package manager's configuration for repositories on a one-to-one basis.  If anything changes in one of these package repositories, the regeneration will be triggered.
@@ -103,7 +109,7 @@ For a hint of what belongs here, consult the output of: `koji list-external-repo
 Instance is to be `present` (default) or `absent`.
 
 ##### `buildroot_name`
-This may be used in place of `namevar` if it's beneficial to give `namevar` an arbitrary value.  If set, this must provide the Koji tag representing the buildroot having external dependencies.
+This may be used in place of *namevar* if it's beneficial to give *namevar* an arbitrary value.  If set, this must provide the Koji tag representing the buildroot having external dependencies.
 
 
 #### koji\_helpers::repo defined type
@@ -111,19 +117,19 @@ This may be used in place of `namevar` if it's beneficial to give `namevar` an a
 This defined type manages Smashd's configuration for a package repository.
 
 ##### `namevar` (required)
-An arbitrary identifier for the mash repository instance unless the `repo_name` parameter is not set in which case this must provide the value normally set with the `repo_name` parameter.
+An arbitrary identifier for the mash repository instance unless the *repo_name* parameter is not set in which case this must provide the value normally set with the *repo_name* parameter.
 
 ##### `dist_tag` (required)
 Pull RPMs from what Koji tag?
 
 ##### `gpg_key_id` (required)
-A string providing the GPG key ID of `sigul_key_name`.  E.g., `4F2A6FD2`.
+A string providing the GPG key ID of *sigul_key_name*.  E.g., `4F2A6FD2`.
 
 ##### `sigul_key_name` (required)
 The key name that smashd is to direct Sigul to use to sign packages in this repository.  E.g., `centos_7`
 
 ##### `sigul_key_pass` (required)
-The passphrase that Sigul will require to unlock `sigul_key_name`.
+The passphrase that Sigul will require to unlock *sigul_key_name*.
 
 ##### `ensure`
 Instance is to be `present` (default) or `absent`.
@@ -135,7 +141,7 @@ An array of the platform architectures to be included in the repository.  Defaul
 If `true`, the debug-info files will be copied into the mashed repository; otherwise they will be skipped.
 
 ##### `debug_info_path`
-Directory name where the debug RPMs are to land.  The default is a dynamic value that matches the package architecture and is relative to the directory named `repo_name` which itself is relative to the `repo_dir` specified for the `koji_helpers` class.
+Directory name where the debug RPMs are to land.  The default is a dynamic value that matches the package architecture and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
 
 ##### `delta`
 Should delta-RPMs be produced for the repository?  Defaults to `false`.
@@ -153,7 +159,7 @@ Undocumented.  Defaults to `false`.
 If `true`, only include the latest version of each package in the tag.  If `false`, include all versions in the tag.  This may also be set to an integer for a middle ground of this many, at most, of the latest versions.  Thus, values of `true` and `1` are equivalent as are `false` and infinity (if Puppet were to have such a value).  The specific meaning of latest version here matches normal rpm behavior, i.e., epoch > version > release.  Defaults to `true`.
 
 ##### `mash_path`
-Name of the directory into which this repository is to be mashed by smashd.  Defaults to the value set by `repo_name`.
+Name of the directory into which this repository is to be mashed by smashd.  Defaults to the value set by *repo_name*.
 
 ##### `max_delta_rpm_age`
 Skip the delta-RPM for any package where the base package is more than this many seconds old.   Defaults to `604800` (== 7 days).
@@ -168,10 +174,10 @@ If `true`, binary RPMs for various target hardware platforms will be combined; o
 Undocumented.  Defaults to `"devel"`.
 
 ##### `repo_name`
-This may be used in place of `namevar` if it's beneficial to give namevar an arbitrary value.
+This may be used in place of *namevar* if it's beneficial to give namevar an arbitrary value.
 
 ##### `repodata_path`
-Directory name where the repodata files are to land.  The default is a dynamic value that matches the package architecture and is relative to the directory named `repo_name` which itself is relative to the `repo_dir` specified for the `koji_helpers` class.
+Directory name where the repodata files are to land.  The default is a dynamic value that matches the package architecture and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
 
 ##### `repoview_title`
 Title to be used atop the repoview pages.
@@ -180,13 +186,13 @@ Title to be used atop the repoview pages.
 Repository URL to use when generating the RSS feed.  The default disables RSS feed generation.
 
 ##### `rpm_path`
-Directory name where the binary RPMs are to land.  The default is a dynamic value that matches the package architecture and is relative to the directory named `repo_name` which itself is relative to the `repo_dir` specified for the `koji_helpers` class.
+Directory name where the binary RPMs are to land.  The default is a dynamic value that matches the package architecture and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
 
 ##### `source_path`
-Directory name where the source RPMs are to land.  The default is `SRPMS` and is relative to the directory named `repo_name` which itself is relative to the `repo_dir` specified for the `koji_helpers` class.
+Directory name where the source RPMs are to land.  The default is `SRPMS` and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
 
 ##### `strict_keys`
-If `true`, the mashing will intentionally fail if any of the builds has not be signed with the `gpg_key_id`.  Defaults to `false`.
+If `true`, the mashing will intentionally fail if any of the builds has not be signed with the *gpg_key_id*.  Defaults to `false`.
 
 
 ## Limitations
