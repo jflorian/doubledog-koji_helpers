@@ -9,7 +9,9 @@
 #
 # === Copyright
 #
+# This file is part of the doubledog-koji_helpers Puppet module.
 # Copyright 2016-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 define koji_helpers::repo (
@@ -26,6 +28,7 @@ define koji_helpers::repo (
         Boolean                 $hash_packages=true,
         Boolean                 $inherit=false,
         Variant[Boolean, Integer[1]]    $latest=true,
+        Array[String[8, 8]]     $mash_gpg_key_ids=[$gpg_key_id],
         Optional[String[1]]     $mash_path=undef,
         Integer                 $max_delta_rpm_age=604800,
         Integer                 $max_delta_rpm_size=800000000,

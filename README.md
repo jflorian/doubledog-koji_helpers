@@ -158,6 +158,9 @@ Undocumented.  Defaults to `false`.
 ##### `latest`
 If `true`, only include the latest version of each package in the tag.  If `false`, include all versions in the tag.  This may also be set to an integer for a middle ground of this many, at most, of the latest versions.  Thus, values of `true` and `1` are equivalent as are `false` and infinity (if Puppet were to have such a value).  The specific meaning of latest version here matches normal rpm behavior, i.e., epoch > version > release.  Defaults to `true`.
 
+##### `mash_gpg_key_ids`
+An array of strings providing the GPG key IDs that are permitted in the resultant repository.  This is only relevant when *strict_keys* is `true` and is ignored otherwise.  Defaults to `[$gpg_key_id]`.
+
 ##### `mash_path`
 Name of the directory into which this repository is to be mashed by smashd.  Defaults to the value set by *repo_name*.
 
@@ -192,7 +195,7 @@ Directory name where the binary RPMs are to land.  The default is a dynamic valu
 Directory name where the source RPMs are to land.  The default is `'SRPMS'` and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
 
 ##### `strict_keys`
-If `true`, the mashing will intentionally fail if any of the builds has not be signed with the *gpg_key_id*.  Defaults to `false`.
+If `true`, the mashing will intentionally fail if any of the builds has not be signed with one of the GPG keys listed in *mash_gpg_key_ids*.  Defaults to `false`.
 
 
 ## Limitations

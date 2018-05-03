@@ -1,3 +1,8 @@
+<%#
+This file is part of the doubledog-koji_helpers Puppet module.
+Copyright 2016-2018 John Florian
+SPDX-License-Identifier: GPL-3.0-or-later
+-%>
 # This file is managed by Puppet via the "<%= @module_name %>" module.
 #
 # vim: filetype=configparser
@@ -13,7 +18,7 @@ multilib_method = <%= @multilib_method %>
 tag = <%= @dist_tag %>
 inherit = <%= @inherit %>
 strict_keys = <%= @strict_keys %>
-keys = <%= @gpg_key_id %>
+keys = <%= @mash_gpg_key_ids.join(',') %>
 repoviewurl = <%= @repoview_url %>
 repoviewtitle = <%= @repoview_title %>
 arches = <%= @arches.join(' ') %>
