@@ -80,7 +80,7 @@ The name of the directory where the mash configurations are kept.  The default s
 The name of the directory where the mash is to perform its work.  The default should be correct for supported platforms.
 
 ##### `notifications_from`
-The email address to be used as the sender when smashd sends notifications.  Defaults to *repo_owner* @ the (facter) `$domain`.
+The email address to be used as the sender when smashd sends notifications.  Defaults to `$repo_owner + '@' + $domain`.
 
 ##### `packages`
 An array of package names needed for the koji-helpers installation.  The default should be correct for supported platforms.
