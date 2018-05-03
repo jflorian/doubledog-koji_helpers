@@ -71,7 +71,7 @@ An array of tags which smashd should ignore.  The default is `['trashcan']`.
 Services are to be started at boot.  Either `true` (default) or `false`.
 
 ##### `ensure`
-Services are to be `running` (default) or `stopped`.  Alternatively, a Boolean value may also be used with `true` equivalent to `running` and `false` equivalent to `stopped`.
+Services are to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
 
 ##### `mash_conf_dir`
 The name of the directory where the mash configurations are kept.  The default should be correct for supported platforms.
@@ -106,7 +106,7 @@ An array of URLs referencing external package repositories upon which this build
 For a hint of what belongs here, consult the output of: `koji list-external-repos`
 
 ##### `ensure`
-Instance is to be `present` (default) or `absent`.
+Instance is to be `'present'` (default) or `'absent'`.
 
 ##### `buildroot_name`
 This may be used in place of *namevar* if it's beneficial to give *namevar* an arbitrary value.  If set, this must provide the Koji tag representing the buildroot having external dependencies.
@@ -123,16 +123,16 @@ An arbitrary identifier for the mash repository instance unless the *repo_name* 
 Pull RPMs from what Koji tag?
 
 ##### `gpg_key_id` (required)
-A string providing the GPG key ID of *sigul_key_name*.  E.g., `4F2A6FD2`.
+A string providing the GPG key ID of *sigul_key_name*.  E.g., `'4F2A6FD2'`.
 
 ##### `sigul_key_name` (required)
-The key name that smashd is to direct Sigul to use to sign packages in this repository.  E.g., `centos_7`
+The key name that smashd is to direct Sigul to use to sign packages in this repository.  E.g., `'centos_7'`
 
 ##### `sigul_key_pass` (required)
 The passphrase that Sigul will require to unlock *sigul_key_name*.
 
 ##### `ensure`
-Instance is to be `present` (default) or `absent`.
+Instance is to be `'present'` (default) or `'absent'`.
 
 ##### `arches`
 An array of the platform architectures to be included in the repository.  Defaults to `['i386', 'x86_64']`.
@@ -162,7 +162,7 @@ If `true`, only include the latest version of each package in the tag.  If `fals
 Name of the directory into which this repository is to be mashed by smashd.  Defaults to the value set by *repo_name*.
 
 ##### `max_delta_rpm_age`
-Skip the delta-RPM for any package where the base package is more than this many seconds old.   Defaults to `604800` (== 7 days).
+Skip the delta-RPM for any package where the base package is more than this many seconds old.   Defaults to `'604800'` (== 7 days).
 
 ##### `max_delta_rpm_size`
 Skip the delta-RPM for any package where the size would exceed this value.  Defaults to `800000000` (== 800 MB).
@@ -189,7 +189,7 @@ Repository URL to use when generating the RSS feed.  The default disables RSS fe
 Directory name where the binary RPMs are to land.  The default is a dynamic value that matches the package architecture and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
 
 ##### `source_path`
-Directory name where the source RPMs are to land.  The default is `SRPMS` and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
+Directory name where the source RPMs are to land.  The default is `'SRPMS'` and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
 
 ##### `strict_keys`
 If `true`, the mashing will intentionally fail if any of the builds has not be signed with the *gpg_key_id*.  Defaults to `false`.
