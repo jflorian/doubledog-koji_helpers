@@ -4,7 +4,9 @@
     "author": "John Florian",
     "license": "GPL-3.0",
     "summary": "A module to manage supplementary tools to help in a Koji deployment",
-    "source": "https://www.doubledog.org/git/puppet-koji_helpers.git",
+    "source": "https://github.com/jflorian/doubledog-koji_helpers",
+    "project_page": "https://github.com/jflorian/doubledog-koji_helpers",
+    "issues_url": "https://github.com/jflorian/doubledog-koji_helpers/issues",
     "operatingsystem_support": [
         {
             "operatingsystem": "CentOS",
