@@ -1,3 +1,8 @@
+<%#
+This file is part of the doubledog-koji_helpers Puppet module.
+Copyright 2016-2018 John Florian
+SPDX-License-Identifier: GPL-3.0-or-later
+-%>
 # /etc/koji-helpers/config
 #
 # vim: filetype=configparser
@@ -15,3 +20,9 @@ repo_dir = <%= @repo_dir %>
 exclude_tags = <%= @exclude_tags.join(' ') %>
 notifications_from = <%= @notifications_from %>
 notifications_to = <%= @notifications_to.join(' ') %>
+<% if @min_interval -%>
+min_interval = <%= @min_interval %>
+<% end -%>
+<% if @max_interval -%>
+max_interval = <%= @max_interval %>
+<% end -%>

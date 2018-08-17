@@ -1,7 +1,14 @@
+# This file is part of the doubledog-koji_helpers Puppet module.
+# Copyright 2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 ---
+
 koji_helpers::config:           /etc/koji-helpers/config
 koji_helpers::mash_conf_dir:    /etc/mash
 koji_helpers::mash_work_dir:    /var/cache/mash
+koji_helpers::max_interval:     null
+koji_helpers::min_interval:     null
 koji_helpers::packages:
     - koji-helpers
 koji_helpers::services:

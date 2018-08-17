@@ -79,6 +79,9 @@ The name of the directory where the mash configurations are kept.  The default s
 ##### `mash_work_dir`
 The name of the directory where the mash is to perform its work.  The default should be correct for supported platforms.
 
+##### `min_interval`, `max_interval`
+These serve as an enforced range boundary for both the check-interval and quiescence-period, both of which are auto-tuned.  The *min_interval* helps avoid abusing your Koji Hub while the *max_interval* helps ensure you don't wait too long for repository updates.  The defaults are those from the application.
+
 ##### `notifications_from`
 The email address to be used as the sender when smashd sends notifications.  Defaults to `$repo_owner + '@' + $domain`.
 
