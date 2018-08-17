@@ -9,7 +9,9 @@
 #
 # === Copyright
 #
+# This file is part of the doubledog-koji_helpers Puppet module.
 # Copyright 2016-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class koji_helpers (
@@ -22,7 +24,7 @@ class koji_helpers (
         String[1]               $repo_owner,
         Array[String[1]]        $notifications_to,
         Boolean                 $enable=true,
-        Variant[Boolean, Enum['running', 'stopped']]    $ensure='running',
+        Ddolib::Service::Ensure $ensure='running',
         Array[String[1]]        $exclude_tags=['trashcan'],
         String[1]               $notifications_from="${repo_owner}@${::domain}",
     ) {

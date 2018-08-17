@@ -19,7 +19,7 @@ define koji_helpers::repo (
         String[8, 8]            $gpg_key_id,
         String[1]               $sigul_key_name,
         String[1]               $sigul_key_pass,
-        Variant[Boolean, Enum['present', 'absent']] $ensure='present',
+        Ddolib::File::Ensure    $ensure='present',
         Array                   $arches=['i386', 'x86_64'],
         Boolean                 $debug_info=true,
         String                  $debug_info_path='%(arch)s/debug',
