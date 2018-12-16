@@ -22,6 +22,7 @@ All notable changes to this project (since v1.2.0) will be documented in this fi
 ## [1.3.0] WIP
 ### Added
 ### Changed
+- puppetlabs-concat dependency now allows version 5
 - puppetlabs-stdlib dependency now allows version 5
 ### Deprecated
 ### Removed
