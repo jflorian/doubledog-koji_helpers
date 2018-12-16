@@ -5,19 +5,26 @@
     "license": "GPL-3.0",
     "summary": "A module to manage supplementary tools to help in a Koji deployment",
     "source": "https://www.doubledog.org/git/puppet-koji_helpers.git",
-    "operatingsystem_support": [{
-        "operatingsystem": "CentOS",
-		"operatingsystemmajrelease": "7"
-    }],
-    "dependencies": [{
-        "name": "puppetlabs/concat",
-        "version_requirement": ">= 4.0.0 < 5.0.0"
-    }, {
-        "name": "puppetlabs/stdlib",
-        "version_requirement": ">= 3.2.0 < 5.0.0"
-    },
-    {
-		"name": "doubledog/ddolib",
-		"version_requirement": ">= 0.0.0 < 1.0.0"
-	}]
+    "operatingsystem_support": [
+        {
+            "operatingsystem": "CentOS",
+            "operatingsystemmajrelease": [
+                "7"
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "name": "puppetlabs/concat",
+            "version_requirement": ">= 4.0.0 < 5.0.0"
+        },
+        {
+            "name": "puppetlabs/stdlib",
+            "version_requirement": ">= 3.2.0 < 5.0.0"
+        },
+        {
+            "name": "doubledog/ddolib",
+            "version_requirement": ">= 0.0.0 < 1.0.0"
+        }
+    ]
 }
