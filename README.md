@@ -1,6 +1,6 @@
 <!--
 # This file is part of the doubledog-koji_helpers Puppet module.
-# Copyright 2018 John Florian
+# Copyright 2018-2019 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
@@ -38,12 +38,12 @@ This module lets you manage the koji-helpers package and its configuration.  Tha
 
 **Classes:**
 
-* [koji\_helpers](#kojihelpers-class)
+* [koji\_helpers](#koji\_helpers-class)
 
 **Defined types:**
 
-* [koji\_helpers::buildroot\_dependency](#kojihelpersbuildrootdependency-defined-type)
-* [koji\_helpers::repo](#kojihelpersrepo-defined-type)
+* [koji\_helpers::buildroot\_dependency](#koji\_helpersbuildroot\_dependency-defined-type)
+* [koji\_helpers::repo](#koji\_helpersrepo-defined-type)
 
 
 ### Classes
