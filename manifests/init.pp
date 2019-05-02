@@ -10,7 +10,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-koji_helpers Puppet module.
-# Copyright 2016-2018 John Florian
+# Copyright 2016-2019 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -36,9 +36,9 @@ class koji_helpers (
     package { $packages:
         ensure => installed,
         notify => Service[$services],
-    } ->
+    }
 
-    file { $::koji_helpers::mash_work_dir:
+    -> file { $::koji_helpers::mash_work_dir:
         ensure  => directory,
         owner   => $repo_owner,
         group   => $repo_owner,
@@ -46,9 +46,9 @@ class koji_helpers (
         seluser => 'system_u',
         selrole => 'object_r',
         seltype => 'var_t',
-    } ->
+    }
 
-    concat { $config:
+    -> concat { $config:
         owner     => $repo_owner,
         group     => $repo_owner,
         mode      => '0600',
