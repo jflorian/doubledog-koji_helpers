@@ -16,7 +16,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-koji_helpers Puppet module.
-# Copyright 2016-2018 John Florian
+# Copyright 2016-2019 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -29,7 +29,7 @@ define koji_helpers::buildroot_dependency (
 
     if $ensure == 'present' or $ensure == true {
         concat::fragment { "koji-helper buildroot_dependency ${buildroot_name}":
-            target  => $::koji_helpers::config,
+            target  => $koji_helpers::config,
             content => template('koji_helpers/config-buildroot-dep.erb'),
             order   => '03',
         }

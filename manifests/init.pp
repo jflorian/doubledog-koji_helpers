@@ -38,7 +38,7 @@ class koji_helpers (
         notify => Service[$services],
     }
 
-    -> file { $::koji_helpers::mash_work_dir:
+    -> file { $koji_helpers::mash_work_dir:
         ensure  => directory,
         owner   => $repo_owner,
         group   => $repo_owner,
