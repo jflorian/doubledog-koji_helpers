@@ -64,6 +64,9 @@ Name of the directory that is to be synchronized with the repository tree compos
 ##### `repo_owner` (required)
 User that is to own the *repo_dir* and the content therein.
 
+##### `buildroot_dependencies`
+A hash whose keys are buildroot-dependency resource names and whose values are hashes comprising the same parameters you would otherwise pass to the [koji\_helpers::buildroot\_dependency](#koji\_helpersbuildroot\_dependency-defined-type) defined type.  The default is none.
+
 ##### `config`
 The filename of the main koji-helpers configuration file.  The default should be correct for supported platforms.
 
