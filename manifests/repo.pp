@@ -55,7 +55,7 @@ define koji_helpers::repo (
         $distro_tags_ = "cpe:/o:fedoraproject:fedora:${repo_name} Null"
     }
 
-    file { "${::koji_helpers::mash_conf_dir}/${repo_name}.mash":
+    file { "${koji_helpers::mash_conf_dir}/${repo_name}.mash":
         ensure  => $ensure,
         owner   => 'root',
         group   => 'root',
@@ -63,7 +63,6 @@ define koji_helpers::repo (
         seluser => 'system_u',
         selrole => 'object_r',
         seltype => 'etc_t',
-        require => Class['koji_helpers'],
         content => template('koji_helpers/mash.erb'),
     }
 

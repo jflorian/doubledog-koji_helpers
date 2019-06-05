@@ -1,7 +1,7 @@
 <!--
-# This file is part of the doubledog-koji_helpers Puppet module.
-# Copyright 2018-2019 John Florian
-# SPDX-License-Identifier: GPL-3.0-or-later
+This file is part of the doubledog-koji_helpers Puppet module.
+Copyright 2018-2019 John Florian
+SPDX-License-Identifier: GPL-3.0-or-later
 
 Template
 
@@ -18,6 +18,17 @@ Template
 # Change log
 
 All notable changes to this project (since v1.2.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
+
+## [1.5.0] 2019-06-05
+### Added
+- Puppet 6 compatibility
+- new parameters to main `koji_helpers` class to allow Hiera-driven deployment:
+    - `buildroot_dependencies`
+    - `repos`
+### Changed
+- `validate_absolute_path()` function to `Stdlib::Absolutepath` data type
+### Removed
+- `koji_helper::notifications_from` default value
 
 ## [1.4.0] 2019-05-02
 ### Changed

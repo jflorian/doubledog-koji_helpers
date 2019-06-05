@@ -20,18 +20,18 @@ class koji_helpers (
         String[1]               $mash_work_dir,
         Array[String[1], 1]     $packages,
         Array[String[1], 1]     $services,
-        String[1]               $repo_dir,
+        Stdlib::Absolutepath    $repo_dir,
         String[1]               $repo_owner,
         Array[String[1]]        $notifications_to,
-        Boolean                 $enable=true,
-        Ddolib::Service::Ensure $ensure='running',
-        Array[String[1]]        $exclude_tags=['trashcan'],
-        String[1]               $notifications_from="${repo_owner}@${::domain}",
+        Boolean                 $enable,
+        Ddolib::Service::Ensure $ensure,
+        Array[String[1]]        $exclude_tags,
+        String[1]               $notifications_from,
         Optional[Integer[0]]    $min_interval,
         Optional[Integer[0]]    $max_interval,
+        Hash[String[1], Hash]   $buildroot_dependencies,
+        Hash[String[1], Hash]   $repos,
     ) {
-
-    validate_absolute_path($repo_dir)
 
     package { $packages:
         ensure => installed,
@@ -71,5 +71,12 @@ class koji_helpers (
         hasrestart => true,
         hasstatus  => true,
     }
+
+    create_resources(
+        koji_helpers::buildroot_dependency,
+        $buildroot_dependencies,
+    )
+
+    create_resources(koji_helpers::repo, $repos)
 
 }

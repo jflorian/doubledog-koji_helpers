@@ -1,7 +1,7 @@
 <!--
-# This file is part of the doubledog-koji_helpers Puppet module.
-# Copyright 2018-2019 John Florian
-# SPDX-License-Identifier: GPL-3.0-or-later
+This file is part of the doubledog-koji_helpers Puppet module.
+Copyright 2018-2019 John Florian
+SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 # koji\_helpers
@@ -17,6 +17,9 @@
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
     * [Classes](#classes)
     * [Defined types](#defined-types)
+    * [Data types](#data-types)
+    * [Facts](#facts)
+    * [Functions](#functions)
 1. [Limitations - OS compatibility, etc.](#limitations)
 1. [Development - Guide for contributing to the module](#development)
 
@@ -45,12 +48,21 @@ This module lets you manage the koji-helpers package and its configuration.  Tha
 * [koji\_helpers::buildroot\_dependency](#koji\_helpersbuildroot\_dependency-defined-type)
 * [koji\_helpers::repo](#koji\_helpersrepo-defined-type)
 
+**Data types:**
+
+**Facts:**
+
+**Functions:**
+
 
 ### Classes
 
 #### koji\_helpers class
 
 This class manages the package installation, the work directory along with the gojira and smashd services.  It also anchors the various configuration fragments that govern those services.
+
+##### `notifications_from` (required)
+The email address to be used as the sender when smashd sends notifications.
 
 ##### `notifications_to` (required)
 An array of email address that are to be notified when smashd affects package repositories.
@@ -60,6 +72,9 @@ Name of the directory that is to be synchronized with the repository tree compos
 
 ##### `repo_owner` (required)
 User that is to own the *repo_dir* and the content therein.
+
+##### `buildroot_dependencies`
+A hash whose keys are buildroot-dependency resource names and whose values are hashes comprising the same parameters you would otherwise pass to the [koji\_helpers::buildroot\_dependency](#koji\_helpersbuildroot\_dependency-defined-type) defined type.  The default is none.
 
 ##### `config`
 The filename of the main koji-helpers configuration file.  The default should be correct for supported platforms.
@@ -82,11 +97,11 @@ The name of the directory where the mash is to perform its work.  The default sh
 ##### `min_interval`, `max_interval`
 These serve as an enforced range boundary for both the check-interval and quiescence-period, both of which are auto-tuned.  The *min_interval* helps avoid abusing your Koji Hub while the *max_interval* helps ensure you don't wait too long for repository updates.  The defaults are those from the application.
 
-##### `notifications_from`
-The email address to be used as the sender when smashd sends notifications.  Defaults to `$repo_owner + '@' + $domain`.
-
 ##### `packages`
 An array of package names needed for the koji-helpers installation.  The default should be correct for supported platforms.
+
+##### `repos`
+A hash whose keys are repository configuration resource names and whose values are hashes comprising the same parameters you would otherwise pass to the [koji\_helpers::repo](#koji\_helpersrepo-defined-type) defined type.  The default is none.
 
 ##### `services`
 An array of services names needed for the operation of koji-helpers.  The default should be correct for supported platforms.
@@ -201,11 +216,16 @@ Directory name where the source RPMs are to land.  The default is `'SRPMS'` and 
 If `true`, the mashing will intentionally fail if any of the builds has not be signed with one of the GPG keys listed in *mash_gpg_key_ids*.  Defaults to `false`.
 
 
+### Data types
+
+### Facts
+
+### Functions
+
+
 ## Limitations
 
 Tested on modern CentOS releases, but likely to work on any Red Hat variant.  Adaptations for other operating systems should be trivial as this module follows the data-in-module paradigm.  See `data/common.yaml` for the most likely obstructions.  If "one size can't fit all", the value should be moved from `data/common.yaml` to `data/os/%{facts.os.name}.yaml` instead.  See `hiera.yaml` for how this is handled.
-
-This should be compatible with Puppet 4.x.
 
 ## Development
 
