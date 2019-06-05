@@ -17,6 +17,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
     * [Classes](#classes)
     * [Defined types](#defined-types)
+    * [Data types](#data-types)
+    * [Facts](#facts)
+    * [Functions](#functions)
 1. [Limitations - OS compatibility, etc.](#limitations)
 1. [Development - Guide for contributing to the module](#development)
 
@@ -44,6 +47,12 @@ This module lets you manage the koji-helpers package and its configuration.  Tha
 
 * [koji\_helpers::buildroot\_dependency](#koji\_helpersbuildroot\_dependency-defined-type)
 * [koji\_helpers::repo](#koji\_helpersrepo-defined-type)
+
+**Data types:**
+
+**Facts:**
+
+**Functions:**
 
 
 ### Classes
@@ -207,11 +216,16 @@ Directory name where the source RPMs are to land.  The default is `'SRPMS'` and 
 If `true`, the mashing will intentionally fail if any of the builds has not be signed with one of the GPG keys listed in *mash_gpg_key_ids*.  Defaults to `false`.
 
 
+### Data types
+
+### Facts
+
+### Functions
+
+
 ## Limitations
 
 Tested on modern CentOS releases, but likely to work on any Red Hat variant.  Adaptations for other operating systems should be trivial as this module follows the data-in-module paradigm.  See `data/common.yaml` for the most likely obstructions.  If "one size can't fit all", the value should be moved from `data/common.yaml` to `data/os/%{facts.os.name}.yaml` instead.  See `hiera.yaml` for how this is handled.
-
-This should be compatible with Puppet 4.x.
 
 ## Development
 
