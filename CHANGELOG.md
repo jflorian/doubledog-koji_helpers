@@ -26,6 +26,7 @@ All notable changes to this project (since v1.2.0) will be documented in this fi
 - `validate_absolute_path()` function to `Stdlib::Absolutepath` data type
 ### Deprecated
 ### Removed
+- `koji_helper::notifications_from` default value
 ### Fixed
 ### Security
 

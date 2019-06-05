@@ -26,7 +26,7 @@ class koji_helpers (
         Boolean                 $enable,
         Ddolib::Service::Ensure $ensure,
         Array[String[1]]        $exclude_tags,
-        String[1]               $notifications_from="${repo_owner}@${::domain}",
+        String[1]               $notifications_from,
         Optional[Integer[0]]    $min_interval,
         Optional[Integer[0]]    $max_interval,
     ) {
