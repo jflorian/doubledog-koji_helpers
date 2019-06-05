@@ -19,7 +19,7 @@ Template
 
 All notable changes to this project (since v1.2.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [1.5.0] WIP
+## [1.5.0] 2019-06-05
 ### Added
 - Puppet 6 compatibility
 - new parameters to main `koji_helpers` class to allow Hiera-driven deployment:
@@ -27,11 +27,8 @@ All notable changes to this project (since v1.2.0) will be documented in this fi
     - `repos`
 ### Changed
 - `validate_absolute_path()` function to `Stdlib::Absolutepath` data type
-### Deprecated
 ### Removed
 - `koji_helper::notifications_from` default value
-### Fixed
-### Security
 
 ## [1.4.0] 2019-05-02
 ### Changed
