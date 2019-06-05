@@ -1,7 +1,7 @@
 <!--
-# This file is part of the doubledog-koji_helpers Puppet module.
-# Copyright 2018-2019 John Florian
-# SPDX-License-Identifier: GPL-3.0-or-later
+This file is part of the doubledog-koji_helpers Puppet module.
+Copyright 2018-2019 John Florian
+SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 # koji\_helpers
