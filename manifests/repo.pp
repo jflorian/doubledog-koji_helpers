@@ -63,7 +63,6 @@ define koji_helpers::repo (
         seluser => 'system_u',
         selrole => 'object_r',
         seltype => 'etc_t',
-        require => Class['koji_helpers'],
         content => template('koji_helpers/mash.erb'),
     }
 

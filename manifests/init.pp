@@ -29,6 +29,7 @@ class koji_helpers (
         String[1]               $notifications_from,
         Optional[Integer[0]]    $min_interval,
         Optional[Integer[0]]    $max_interval,
+        Hash[String[1], Hash]   $repos,
     ) {
 
     package { $packages:
@@ -69,5 +70,7 @@ class koji_helpers (
         hasrestart => true,
         hasstatus  => true,
     }
+
+    create_resources(koji_helpers::repo, $repos)
 
 }

@@ -22,6 +22,7 @@ All notable changes to this project (since v1.2.0) will be documented in this fi
 ## [1.5.0] WIP
 ### Added
 - Puppet 6 compatibility
+- `koji_helpers::repos` parameter
 ### Changed
 - `validate_absolute_path()` function to `Stdlib::Absolutepath` data type
 ### Deprecated

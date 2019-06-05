@@ -88,6 +88,9 @@ These serve as an enforced range boundary for both the check-interval and quiesc
 ##### `packages`
 An array of package names needed for the koji-helpers installation.  The default should be correct for supported platforms.
 
+##### `repos`
+A hash whose keys are repository configuration resource names and whose values are hashes comprising the same parameters you would otherwise pass to the [koji\_helpers::repo](#koji\_helpersrepo-defined-type) defined type.  The default is none.
+
 ##### `services`
 An array of services names needed for the operation of koji-helpers.  The default should be correct for supported platforms.
 

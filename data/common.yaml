@@ -18,3 +18,4 @@ koji_helpers::packages:
 koji_helpers::services:
     - gojira
     - smashd
+koji_helpers::repos:                    {}
