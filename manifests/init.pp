@@ -20,7 +20,7 @@ class koji_helpers (
         String[1]               $mash_work_dir,
         Array[String[1], 1]     $packages,
         Array[String[1], 1]     $services,
-        String[1]               $repo_dir,
+        Stdlib::Absolutepath    $repo_dir,
         String[1]               $repo_owner,
         Array[String[1]]        $notifications_to,
         Boolean                 $enable=true,
@@ -30,8 +30,6 @@ class koji_helpers (
         Optional[Integer[0]]    $min_interval,
         Optional[Integer[0]]    $max_interval,
     ) {
-
-    validate_absolute_path($repo_dir)
 
     package { $packages:
         ensure => installed,
