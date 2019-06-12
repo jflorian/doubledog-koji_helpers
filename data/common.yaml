@@ -11,11 +11,13 @@ koji_helpers::enable:                   true
 koji_helpers::ensure:                   running
 koji_helpers::exclude_tags:
     - trashcan
+koji_helpers::koji_dir:                 /mnt/koji
 koji_helpers::max_interval:             null
 koji_helpers::min_interval:             null
 koji_helpers::packages:
     - koji-helpers
 koji_helpers::services:
     - gojira
+    - klean.timer
     - smashd
 koji_helpers::repos:                    {}

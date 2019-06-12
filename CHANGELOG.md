@@ -21,6 +21,7 @@ All notable changes to this project (since v1.2.0) will be documented in this fi
 
 ## [2.0.0] WIP
 ### Added
+- management for the new `klean` tool/service/timer
 ### Changed
 ### Deprecated
 ### Removed

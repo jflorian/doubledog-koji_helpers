@@ -85,6 +85,9 @@ Services are to be started at boot.  Either `true` (default) or `false`.
 ##### `ensure`
 Services are to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
 
+##### `koji_dir`
+The name of the directory that is the root of all Koji directories.  Effectively, this must be the same value as the *KojiDir* setting in your `hub.conf`.  The default is `'/mnt/koji'`.
+
 ##### `min_interval`, `max_interval`
 These serve as an enforced range boundary for both the check-interval and quiescence-period, both of which are auto-tuned.  The *min_interval* helps avoid abusing your Koji Hub while the *max_interval* helps ensure you don't wait too long for repository updates.  The defaults are those from the application.
 

@@ -21,6 +21,7 @@ class koji_helpers (
         Boolean                 $enable,
         Ddolib::Service::Ensure $ensure,
         Array[String[1]]        $exclude_tags,
+        Stdlib::Absolutepath    $koji_dir,
         Optional[Integer[0]]    $max_interval,
         Optional[Integer[0]]    $min_interval,
         String[1]               $notifications_from,
