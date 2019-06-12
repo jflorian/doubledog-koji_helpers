@@ -20,15 +20,8 @@ define koji_helpers::repo (
         String[1]               $sigul_key_pass,
         Ddolib::File::Ensure    $ensure='present',
         Array                   $arches=['i386', 'x86_64'],
-        Optional[String[1]]     $mash_path=undef,
         String                  $repo_name=$title,
     ) {
-
-    if $mash_path {
-        $mash_path_ = $mash_path
-    } else {
-        $mash_path_ = $repo_name
-    }
 
     if $ensure == 'present' or $ensure == true {
         concat::fragment { "koji-helper repository ${repo_name}":

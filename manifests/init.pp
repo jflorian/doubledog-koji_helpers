@@ -16,10 +16,8 @@
 
 class koji_helpers (
         String[1]               $config,
-        String[1]               $mash_work_dir,
         Array[String[1], 1]     $packages,
         Array[String[1], 1]     $services,
-        Stdlib::Absolutepath    $repo_dir,
         String[1]               $repo_owner,
         Array[String[1]]        $notifications_to,
         Boolean                 $enable,
@@ -35,16 +33,6 @@ class koji_helpers (
     package { $packages:
         ensure => installed,
         notify => Service[$services],
-    }
-
-    -> file { $koji_helpers::mash_work_dir:
-        ensure  => directory,
-        owner   => $repo_owner,
-        group   => $repo_owner,
-        mode    => '0755',
-        seluser => 'system_u',
-        selrole => 'object_r',
-        seltype => 'var_t',
     }
 
     -> concat { $config:

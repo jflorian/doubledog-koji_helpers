@@ -67,9 +67,6 @@ The email address to be used as the sender when smashd sends notifications.
 ##### `notifications_to` (required)
 An array of email address that are to be notified when smashd affects package repositories.
 
-##### `repo_dir` (required)
-Name of the directory that is to be synchronized with the repository tree composited from each of the mashed repositories.  This typically would be the longest path that all package repositories have in common.
-
 ##### `repo_owner` (required)
 User that is to own the *repo_dir* and the content therein.
 
@@ -87,9 +84,6 @@ Services are to be started at boot.  Either `true` (default) or `false`.
 
 ##### `ensure`
 Services are to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
-
-##### `mash_work_dir`
-The name of the directory where the mash is to perform its work.  The default should be correct for supported platforms.
 
 ##### `min_interval`, `max_interval`
 These serve as an enforced range boundary for both the check-interval and quiescence-period, both of which are auto-tuned.  The *min_interval* helps avoid abusing your Koji Hub while the *max_interval* helps ensure you don't wait too long for repository updates.  The defaults are those from the application.
@@ -132,7 +126,7 @@ This may be used in place of *namevar* if it's beneficial to give *namevar* an a
 This defined type manages Smashd's configuration for a package repository.
 
 ##### `namevar` (required)
-An arbitrary identifier for the mash repository instance unless the *repo_name* parameter is not set in which case this must provide the value normally set with the *repo_name* parameter.
+An arbitrary identifier for the repository instance unless the *repo_name* parameter is not set in which case this must provide the value normally set with the *repo_name* parameter.
 
 ##### `gpg_key_id` (required)
 A string providing the GPG key ID of *sigul_key_name*.  E.g., `'4F2A6FD2'`.
@@ -148,9 +142,6 @@ Instance is to be `'present'` (default) or `'absent'`.
 
 ##### `arches`
 An array of the platform architectures to be included in the repository.  Defaults to `['i386', 'x86_64']`.
-
-##### `mash_path`
-Name of the directory into which this repository is to be mashed by smashd.  Defaults to the value set by *repo_name*.
 
 ##### `repo_name`
 This may be used in place of *namevar* if it's beneficial to give namevar an arbitrary value.

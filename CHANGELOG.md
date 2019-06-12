@@ -25,6 +25,7 @@ All notable changes to this project (since v1.2.0) will be documented in this fi
 ### Deprecated
 ### Removed
 - management of any `mash` configuration files
+- all parameters and resources related to executing `mash` or its output
 ### Fixed
 ### Security
 

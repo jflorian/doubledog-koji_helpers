@@ -10,7 +10,6 @@ koji_helpers::enable:                   true
 koji_helpers::ensure:                   running
 koji_helpers::exclude_tags:
     - trashcan
-koji_helpers::mash_work_dir:            /var/cache/mash
 koji_helpers::max_interval:             null
 koji_helpers::min_interval:             null
 koji_helpers::packages:
