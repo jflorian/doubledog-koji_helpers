@@ -16,7 +16,6 @@
 
 class koji_helpers (
         String[1]               $config,
-        String[1]               $mash_conf_dir,
         String[1]               $mash_work_dir,
         Array[String[1], 1]     $packages,
         Array[String[1], 1]     $services,

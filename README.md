@@ -88,9 +88,6 @@ Services are to be started at boot.  Either `true` (default) or `false`.
 ##### `ensure`
 Services are to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
 
-##### `mash_conf_dir`
-The name of the directory where the mash configurations are kept.  The default should be correct for supported platforms.
-
 ##### `mash_work_dir`
 The name of the directory where the mash is to perform its work.  The default should be correct for supported platforms.
 
@@ -137,9 +134,6 @@ This defined type manages Smashd's configuration for a package repository.
 ##### `namevar` (required)
 An arbitrary identifier for the mash repository instance unless the *repo_name* parameter is not set in which case this must provide the value normally set with the *repo_name* parameter.
 
-##### `dist_tag` (required)
-Pull RPMs from what Koji tag?
-
 ##### `gpg_key_id` (required)
 A string providing the GPG key ID of *sigul_key_name*.  E.g., `'4F2A6FD2'`.
 
@@ -155,65 +149,11 @@ Instance is to be `'present'` (default) or `'absent'`.
 ##### `arches`
 An array of the platform architectures to be included in the repository.  Defaults to `['i386', 'x86_64']`.
 
-##### `debug_info`
-If `true`, the debug-info files will be copied into the mashed repository; otherwise they will be skipped.
-
-##### `debug_info_path`
-Directory name where the debug RPMs are to land.  The default is a dynamic value that matches the package architecture and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
-
-##### `delta`
-Should delta-RPMs be produced for the repository?  Defaults to `false`.
-
-##### `distro_tags`
-Undocumented.  Defaults to `"cpe:/o:fedoraproject:fedora:$repo_name Null"`.
-
-##### `hash_packages`
-If `true`, each RPM will be placed within a subdirectory whose name matches the first character of the RPM.  Otherwise such subdirectories will not be used.  Defaults to `true`.
-
-##### `inherit`
-Undocumented.  Defaults to `false`.
-
-##### `latest`
-If `true`, only include the latest version of each package in the tag.  If `false`, include all versions in the tag.  This may also be set to an integer for a middle ground of this many, at most, of the latest versions.  Thus, values of `true` and `1` are equivalent as are `false` and infinity (if Puppet were to have such a value).  The specific meaning of latest version here matches normal rpm behavior, i.e., epoch > version > release.  Defaults to `true`.
-
-##### `mash_gpg_key_ids`
-An array of strings providing the GPG key IDs that are permitted in the resultant repository.  This is only relevant when *strict_keys* is `true` and is ignored otherwise.  Defaults to `[$gpg_key_id]`.
-
 ##### `mash_path`
 Name of the directory into which this repository is to be mashed by smashd.  Defaults to the value set by *repo_name*.
 
-##### `max_delta_rpm_age`
-Skip the delta-RPM for any package where the base package is more than this many seconds old.   Defaults to `'604800'` (== 7 days).
-
-##### `max_delta_rpm_size`
-Skip the delta-RPM for any package where the size would exceed this value.  Defaults to `800000000` (== 800 MB).
-
-##### `multilib`
-If `true`, binary RPMs for various target hardware platforms will be combined; otherwise they will be kept separate.
-
-##### `multilib_method`
-Undocumented.  Defaults to `"devel"`.
-
 ##### `repo_name`
 This may be used in place of *namevar* if it's beneficial to give namevar an arbitrary value.
-
-##### `repodata_path`
-Directory name where the repodata files are to land.  The default is a dynamic value that matches the package architecture and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
-
-##### `repoview_title`
-Title to be used atop the repoview pages.
-
-##### `repoview_url`
-Repository URL to use when generating the RSS feed.  The default disables RSS feed generation.
-
-##### `rpm_path`
-Directory name where the binary RPMs are to land.  The default is a dynamic value that matches the package architecture and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
-
-##### `source_path`
-Directory name where the source RPMs are to land.  The default is `'SRPMS'` and is relative to the directory named *repo_name* which itself is relative to the *repo_dir* specified for the `koji_helpers` class.
-
-##### `strict_keys`
-If `true`, the mashing will intentionally fail if any of the builds has not be signed with one of the GPG keys listed in *mash_gpg_key_ids*.  Defaults to `false`.
 
 
 ### Data types

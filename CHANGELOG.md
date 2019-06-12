@@ -19,6 +19,15 @@ Template
 
 All notable changes to this project (since v1.2.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.0.0] WIP
+### Added
+### Changed
+### Deprecated
+### Removed
+- management of any `mash` configuration files
+### Fixed
+### Security
+
 ## [1.5.0] 2019-06-05
 ### Added
 - Puppet 6 compatibility
