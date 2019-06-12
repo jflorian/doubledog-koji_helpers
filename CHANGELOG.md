@@ -27,6 +27,7 @@ All notable changes to this project (since v1.2.0) will be documented in this fi
 - management of any `mash` configuration files
 - all parameters and resources related to executing `mash` or its output
 ### Fixed
+- config pathname comment may not reflect actuality
 ### Security
 
 ## [1.5.0] 2019-06-05
