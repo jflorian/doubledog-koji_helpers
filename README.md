@@ -67,14 +67,14 @@ The email address to be used as the sender when smashd sends notifications.
 ##### `notifications_to` (required)
 An array of email address that are to be notified when smashd affects package repositories.
 
-##### `repo_owner` (required)
-User that is to own the *repo_dir* and the content therein.
-
 ##### `buildroot_dependencies`
 A hash whose keys are buildroot-dependency resource names and whose values are hashes comprising the same parameters you would otherwise pass to the [koji\_helpers::buildroot\_dependency](#koji\_helpersbuildroot\_dependency-defined-type) defined type.  The default is none.
 
 ##### `config`
 The filename of the main koji-helpers configuration file.  The default should be correct for supported platforms.
+
+##### `config_owner`
+User that runs koji-helper daemons and needs access to *config*.  The default should be correct for supported platforms.
 
 ##### `exclude_tags`
 An array of tags which smashd should ignore.  The default is `['trashcan']`.

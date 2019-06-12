@@ -6,6 +6,7 @@
 
 koji_helpers::buildroot_dependencies:   {}
 koji_helpers::config:                   /etc/koji-helpers/config
+koji_helpers::config_owner:             repomgr
 koji_helpers::enable:                   true
 koji_helpers::ensure:                   running
 koji_helpers::exclude_tags:

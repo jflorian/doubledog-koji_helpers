@@ -18,7 +18,7 @@ class koji_helpers (
         String[1]               $config,
         Array[String[1], 1]     $packages,
         Array[String[1], 1]     $services,
-        String[1]               $repo_owner,
+        String[1]               $config_owner,
         Array[String[1]]        $notifications_to,
         Boolean                 $enable,
         Ddolib::Service::Ensure $ensure,
@@ -36,8 +36,8 @@ class koji_helpers (
     }
 
     -> concat { $config:
-        owner     => $repo_owner,
-        group     => $repo_owner,
+        owner     => $config_owner,
+        group     => $config_owner,
         mode      => '0600',
         seluser   => 'system_u',
         selrole   => 'object_r',
