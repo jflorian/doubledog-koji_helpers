@@ -15,19 +15,19 @@
 
 
 class koji_helpers (
+        Hash[String[1], Hash]   $buildroot_dependencies,
         String[1]               $config,
-        Array[String[1], 1]     $packages,
-        Array[String[1], 1]     $services,
         String[1]               $config_owner,
-        Array[String[1]]        $notifications_to,
         Boolean                 $enable,
         Ddolib::Service::Ensure $ensure,
         Array[String[1]]        $exclude_tags,
-        String[1]               $notifications_from,
-        Optional[Integer[0]]    $min_interval,
         Optional[Integer[0]]    $max_interval,
-        Hash[String[1], Hash]   $buildroot_dependencies,
+        Optional[Integer[0]]    $min_interval,
+        String[1]               $notifications_from,
+        Array[String[1]]        $notifications_to,
+        Array[String[1], 1]     $packages,
         Hash[String[1], Hash]   $repos,
+        Array[String[1], 1]     $services,
     ) {
 
     package { $packages:

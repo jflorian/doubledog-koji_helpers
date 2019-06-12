@@ -22,8 +22,8 @@
 
 define koji_helpers::buildroot_dependency (
         Array[String[1]]        $arches,
-        Array[String[1]]        $ext_repo_urls,
         Ddolib::File::Ensure    $ensure='present',
+        Array[String[1]]        $ext_repo_urls,
         String[1]               $buildroot_name=$title,
     ) {
 
