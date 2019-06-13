@@ -15,22 +15,20 @@
 
 
 class koji_helpers (
+        Hash[String[1], Hash]   $buildroot_dependencies,
         String[1]               $config,
-        String[1]               $mash_conf_dir,
-        String[1]               $mash_work_dir,
-        Array[String[1], 1]     $packages,
-        Array[String[1], 1]     $services,
-        Stdlib::Absolutepath    $repo_dir,
-        String[1]               $repo_owner,
-        Array[String[1]]        $notifications_to,
+        String[1]               $config_owner,
         Boolean                 $enable,
         Ddolib::Service::Ensure $ensure,
         Array[String[1]]        $exclude_tags,
-        String[1]               $notifications_from,
-        Optional[Integer[0]]    $min_interval,
+        Stdlib::Absolutepath    $koji_dir,
         Optional[Integer[0]]    $max_interval,
-        Hash[String[1], Hash]   $buildroot_dependencies,
+        Optional[Integer[0]]    $min_interval,
+        String[1]               $notifications_from,
+        Array[String[1]]        $notifications_to,
+        Array[String[1], 1]     $packages,
         Hash[String[1], Hash]   $repos,
+        Array[String[1], 1]     $services,
     ) {
 
     package { $packages:
@@ -38,19 +36,9 @@ class koji_helpers (
         notify => Service[$services],
     }
 
-    -> file { $koji_helpers::mash_work_dir:
-        ensure  => directory,
-        owner   => $repo_owner,
-        group   => $repo_owner,
-        mode    => '0755',
-        seluser => 'system_u',
-        selrole => 'object_r',
-        seltype => 'var_t',
-    }
-
     -> concat { $config:
-        owner     => $repo_owner,
-        group     => $repo_owner,
+        owner     => $config_owner,
+        group     => $config_owner,
         mode      => '0600',
         seluser   => 'system_u',
         selrole   => 'object_r',
