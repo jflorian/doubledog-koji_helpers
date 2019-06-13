@@ -19,17 +19,14 @@ Template
 
 All notable changes to this project (since v1.2.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [2.0.0] WIP
+## [2.0.0] 2019-06-13
 ### Added
 - management for the new `klean` tool/service/timer
-### Changed
-### Deprecated
 ### Removed
 - management of any `mash` configuration files
 - all parameters and resources related to executing `mash` or its output
 ### Fixed
 - config pathname comment may not reflect actuality
-### Security
 
 ## [1.5.0] 2019-06-05
 ### Added
