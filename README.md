@@ -25,7 +25,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 ## Description
 
-This module lets you manage the koji-helpers package and its configuration.  That package, however, has not yet been released to the general public so this is not likely to be of any value to you.  Sorry kids.
+This module lets you manage the [koji-helpers package](https://github.com/jflorian/koji-helpers) and its configuration.
 
 ## Setup
 
