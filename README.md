@@ -50,6 +50,7 @@ This module lets you manage the [koji-helpers package](https://github.com/jflori
 
 **Data types:**
 
+* [Koji\_helpers::Gpgkeyid](#koji\_helpersgpgkeyid-data-type)
 **Facts:**
 
 **Functions:**
@@ -151,6 +152,15 @@ This may be used in place of *namevar* if it's beneficial to give namevar an arb
 
 
 ### Data types
+
+#### Koji\_helpers::Gpgkeyid data type
+
+Matches any of the commonly accepted GPG key identity formats typically known as `short`, `long` and `full`:
+
+* 8 hex-digits (`short`)
+* 16 hex-digits (`long`)
+* 40 hex-digits (`full`)
+
 
 ### Facts
 
