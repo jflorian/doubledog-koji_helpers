@@ -133,7 +133,7 @@ This defined type manages Smashd's configuration for a package repository.
 An arbitrary identifier for the repository instance unless the *repo_name* parameter is not set in which case this must provide the value normally set with the *repo_name* parameter.
 
 ##### `gpg_key_id` (required)
-A string providing the GPG key ID of *sigul_key_name*.  E.g., `'4F2A6FD2'`.
+The [Koji\_helpers::Gpgkeyid](#koji\_helpersgpgkeyid-data-type) data type providing the GPG key ID of *sigul_key_name*.  E.g., `'4F2A6FD2'`.  Whether backend software can handle any of these formats is left to the user to find out.  The full 40-digit format is preferred as the most secure, but a lot of older software may only permit the short format.
 
 ##### `sigul_key_name` (required)
 The key name that smashd is to direct Sigul to use to sign packages in this repository.  E.g., `'centos_7'`

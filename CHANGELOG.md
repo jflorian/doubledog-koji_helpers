@@ -23,9 +23,12 @@ All notable changes to this project (since v1.2.0) will be documented in this fi
 ### Added
 - `Koji_helpers::Gpgkeyid` data type
 ### Changed
+- `koji_helpers::repo::gpg_key_id` now accepts long and full IDs in addition to short ones
 ### Deprecated
 ### Removed
 ### Fixed
+- `koji_helpers::repo::gpg_key_id` accepted non-hex digits
+- `koji_helpers::repo::gpg_key_id` would not accept long or full IDs
 ### Security
 
 ## [2.0.0] 2019-06-13
