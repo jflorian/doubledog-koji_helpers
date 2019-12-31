@@ -19,17 +19,14 @@ Template
 
 All notable changes to this project (since v1.2.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [2.1.0] WIP
+## [2.1.0] 2019-12-31
 ### Added
 - `Koji_helpers::Gpgkeyid` data type
 ### Changed
 - `koji_helpers::repo::gpg_key_id` now accepts long and full IDs in addition to short ones
-### Deprecated
-### Removed
 ### Fixed
 - `koji_helpers::repo::gpg_key_id` accepted non-hex digits
 - `koji_helpers::repo::gpg_key_id` would not accept long or full IDs
-### Security
 
 ## [2.0.0] 2019-06-13
 ### Added
