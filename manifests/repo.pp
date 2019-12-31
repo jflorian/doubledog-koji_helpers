@@ -17,7 +17,7 @@
 define koji_helpers::repo (
         Array                   $arches=['i386', 'x86_64'],
         Ddolib::File::Ensure    $ensure='present',
-        String[8, 8]            $gpg_key_id,
+        Koji_helpers::Gpgkeyid  $gpg_key_id,
         String[1]               $sigul_key_name,
         String[1]               $sigul_key_pass,
         String                  $repo_name=$title,

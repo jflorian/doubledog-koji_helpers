@@ -25,7 +25,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 ## Description
 
-This module lets you manage the koji-helpers package and its configuration.  That package, however, has not yet been released to the general public so this is not likely to be of any value to you.  Sorry kids.
+This module lets you manage the [koji-helpers package](https://github.com/jflorian/koji-helpers) and its configuration.
 
 ## Setup
 
@@ -50,6 +50,7 @@ This module lets you manage the koji-helpers package and its configuration.  Tha
 
 **Data types:**
 
+* [Koji\_helpers::Gpgkeyid](#koji\_helpersgpgkeyid-data-type)
 **Facts:**
 
 **Functions:**
@@ -132,7 +133,7 @@ This defined type manages Smashd's configuration for a package repository.
 An arbitrary identifier for the repository instance unless the *repo_name* parameter is not set in which case this must provide the value normally set with the *repo_name* parameter.
 
 ##### `gpg_key_id` (required)
-A string providing the GPG key ID of *sigul_key_name*.  E.g., `'4F2A6FD2'`.
+The [Koji\_helpers::Gpgkeyid](#koji\_helpersgpgkeyid-data-type) data type providing the GPG key ID of *sigul_key_name*.  E.g., `'4F2A6FD2'`.  Whether backend software can handle any of these formats is left to the user to find out.  The full 40-digit format is preferred as the most secure, but a lot of older software may only permit the short format.
 
 ##### `sigul_key_name` (required)
 The key name that smashd is to direct Sigul to use to sign packages in this repository.  E.g., `'centos_7'`
@@ -151,6 +152,15 @@ This may be used in place of *namevar* if it's beneficial to give namevar an arb
 
 
 ### Data types
+
+#### Koji\_helpers::Gpgkeyid data type
+
+Matches any of the commonly accepted GPG key identity formats typically known as `short`, `long` and `full`:
+
+* 8 hex-digits (`short`)
+* 16 hex-digits (`long`)
+* 40 hex-digits (`full`)
+
 
 ### Facts
 
