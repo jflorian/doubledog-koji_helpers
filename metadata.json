@@ -36,5 +36,5 @@
     "project_page": "https://github.com/jflorian/doubledog-koji_helpers",
     "source": "https://github.com/jflorian/doubledog-koji_helpers",
     "summary": "A module to manage supplementary tools to help in a Koji deployment",
-    "version": "2.1.0"
+    "version": "2.2.0"
 }
