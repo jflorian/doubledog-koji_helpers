@@ -1,6 +1,6 @@
 <!--
 This file is part of the doubledog-koji_helpers Puppet module.
-Copyright 2018-2019 John Florian
+Copyright 2018-2020 John Florian
 SPDX-License-Identifier: GPL-3.0-or-later
 
 Template
@@ -18,6 +18,15 @@ Template
 # Change log
 
 All notable changes to this project (since v1.2.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
+
+## [2.2.0] 2020-12-08
+### Added
+- CentOS 8 support
+- Fedora 32-33 support
+- dependency on `puppetlabs-concat` now allows v6
+- dependency on `puppetlabs-stdlib` now allows v6
+### Removed
+- Fedora 29-31 support
 
 ## [2.1.0] 2019-12-31
 ### Added

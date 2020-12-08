@@ -16,14 +16,14 @@
 # === Copyright
 #
 # This file is part of the doubledog-koji_helpers Puppet module.
-# Copyright 2016-2019 John Florian
+# Copyright 2016-2020 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
 define koji_helpers::buildroot_dependency (
         Array[String[1]]        $arches,
-        Ddolib::File::Ensure    $ensure='present',
         Array[String[1]]        $ext_repo_urls,
+        Ddolib::File::Ensure    $ensure='present',
         String[1]               $buildroot_name=$title,
     ) {
 

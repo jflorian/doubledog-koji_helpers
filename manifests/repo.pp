@@ -10,16 +10,16 @@
 # === Copyright
 #
 # This file is part of the doubledog-koji_helpers Puppet module.
-# Copyright 2016-2019 John Florian
+# Copyright 2016-2020 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
 define koji_helpers::repo (
-        Array                   $arches=['i386', 'x86_64'],
-        Ddolib::File::Ensure    $ensure='present',
         Koji_helpers::Gpgkeyid  $gpg_key_id,
         String[1]               $sigul_key_name,
         String[1]               $sigul_key_pass,
+        Array                   $arches=['i386', 'x86_64'],
+        Ddolib::File::Ensure    $ensure='present',
         String                  $repo_name=$title,
     ) {
 
