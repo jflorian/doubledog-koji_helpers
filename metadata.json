@@ -11,7 +11,7 @@
         },
         {
             "name": "puppetlabs/stdlib",
-            "version_requirement": ">= 3.2.0 < 6.0.0"
+            "version_requirement": ">= 3.2.0 < 7.0.0"
         }
     ],
     "issues_url": "https://github.com/jflorian/doubledog-koji_helpers/issues",
